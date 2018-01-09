@@ -1,5 +1,6 @@
 package priv.annru.emedicalrecord.activity;
 
+import android.content.res.ColorStateList;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(EMedicalRecordFragment.getInstance());
         fragments.add(EMedicalRecordFragment.getInstance());
         fragments.add(EMedicalRecordFragment.getInstance());
-        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), fragments));
         String[] tabsTitle = getResources().getStringArray(R.array.tabs_title);
+        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), fragments, tabsTitle));
         for (String title : tabsTitle) {
             tabLayout.addTab(tabLayout.newTab().setText(title));
         }

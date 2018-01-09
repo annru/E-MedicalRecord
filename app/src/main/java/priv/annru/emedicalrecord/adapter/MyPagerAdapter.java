@@ -17,10 +17,12 @@ import priv.annru.emedicalrecord.base.BaseFragment;
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
     private List<BaseFragment> fragmentList;
+    private String[] titles;
 
 
-    public MyPagerAdapter(FragmentManager fm, List<BaseFragment> list) {
+    public MyPagerAdapter(FragmentManager fm, List<BaseFragment> list, String[] titles) {
         super(fm);
+        this.titles = titles;
         this.fragmentList = list;
     }
 
@@ -32,5 +34,10 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return fragmentList.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return titles[position];
     }
 }
