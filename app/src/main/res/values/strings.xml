@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">XXXX</string>
+
+
+    <string-array name="tabs_title">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+    </string-array>
+</resources>
