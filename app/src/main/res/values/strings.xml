@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">XXXX</string>
+    <string name="new_disease_course">新建病历</string>
+    <string name="user_name">姓名：</string>
+    <string name="date">日期：</string>
+    <string name="department">科室：</string>
+    <string name="diagnosis">诊断：</string>
+    <string name="the_illness">病情：</string>
 
 
     <string-array name="tabs_title">
-        <item>a</item>
-        <item>b</item>
-        <item>c</item>
+        <item>遍历</item>
+        <item>提醒</item>
+        <item>我的</item>
+    </string-array>
+
+    <string-array name="child_tabs_title">
+        <item>单次遍历</item>
+        <item>资料分类</item>
+        <item>日常记录</item>
     </string-array>
 </resources>
