@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -17,6 +18,7 @@ import butterknife.OnClick;
 import priv.annru.emedicalrecord.R;
 import priv.annru.emedicalrecord.base.BaseActivity;
 import priv.annru.emedicalrecord.base.MyApplication;
+import priv.annru.emedicalrecord.dialog.CommonDialog;
 import priv.annru.emedicalrecord.gen.MedicalRecordDao;
 import priv.annru.emedicalrecord.model.MedicalRecord;
 
@@ -64,6 +66,22 @@ public class NewDiseaseCourseActivity extends BaseActivity {
                 showDatePickerDialog();
                 break;
             case R.id.save_btn:
+                customDialog();
+                if (userNameEdit.getText().toString().trim().isEmpty()) {
+                    return;
+                }
+                if (dateEdit.getText().toString().trim().isEmpty()) {
+                    return;
+                }
+                if (departmentEdit.getText().toString().trim().isEmpty()) {
+                    return;
+                }
+                if (diagnosisEdit.getText().toString().trim().isEmpty()) {
+                    return;
+                }
+                if (illnessEdit.getText().toString().trim().isEmpty()) {
+                    return;
+                }
                 save();
                 finish();
                 break;
@@ -96,5 +114,27 @@ public class NewDiseaseCourseActivity extends BaseActivity {
         medicalRecord.setDiagnosis(diagnosisEdit.getText().toString());
         medicalRecord.setIllness(illnessEdit.getText().toString());
         medicalRecordDao.insert(medicalRecord);
+    }
+
+
+    private void customDialog() {
+        CommonDialog.with(this)
+                .title("自定义对话框标题")
+                .message("这是内容")
+                .leftButtonText("取消", new CommonDialog.Builder.ButtonClickListener() {
+                    @Override
+                    public void onClick(CommonDialog dialog) {
+                        dialog.dismiss();
+                    }
+                })
+                .rightButtonText("确定", new CommonDialog.Builder.ButtonClickListener() {
+                    @Override
+                    public void onClick(CommonDialog dialog) {
+                        dialog.dismiss();
+                        Toast.makeText(NewDiseaseCourseActivity.this, "退出", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .create()
+                .show();
     }
 }

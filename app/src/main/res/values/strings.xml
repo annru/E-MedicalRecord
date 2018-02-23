@@ -7,6 +7,8 @@
     <string name="diagnosis">诊断：</string>
     <string name="the_illness">病情：</string>
     <string name="save">保存</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
 
 
     <string-array name="tabs_title">
