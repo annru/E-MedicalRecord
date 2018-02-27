@@ -117,7 +117,7 @@ public class NewDiseaseCourseActivity extends BaseActivity {
         medicalRecordDao.insert(medicalRecord);
     }
 
-
+    //建造者模式自定义对话框
     private void customDialog() {
         CommonDialog.with(this)
                 .title("自定义对话框标题")
