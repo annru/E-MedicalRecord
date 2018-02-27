@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -131,6 +132,7 @@ public class NewDiseaseCourseActivity extends BaseActivity {
                     @Override
                     public void onClick(CommonDialog dialog) {
                         dialog.dismiss();
+                        dialog.cancel();
                         Toast.makeText(NewDiseaseCourseActivity.this, "退出", Toast.LENGTH_LONG).show();
                     }
                 })
